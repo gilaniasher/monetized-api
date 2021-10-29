@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+
+import Home from './components/Home/Home'
+import SuccessCheckout from './components/SuccessCheckout'
+import ErrorCheckout from './components/ErrorCheckout'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router basename='/monetized-api'>
+      <div className='App'>
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/success'>Success</Link></li>
+          <li><Link to='/error'>Error</Link></li>
+        </ul>
+      </div>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/success' component={SuccessCheckout} />
+        <Route exact path='/error' component={ErrorCheckout} />
+      </Switch>
+    </Router>
   );
 }
 
