@@ -1,0 +1,16 @@
+service: monetized-api
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: '20201221'
+
+functions:
+  testGet:
+    handler: endpoints/testGet.handler
+    events:
+      - http: GET /testGet
+
+plugins:
+  - serverless-offline
