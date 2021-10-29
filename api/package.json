@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "serverless-offline": "^8.2.0"
+  },
+  "dependencies": {
+    "stripe": "^8.184.0"
   }
 }

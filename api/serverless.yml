@@ -11,6 +11,10 @@ functions:
     handler: endpoints/testGet.handler
     events:
       - http: GET /testGet
+  checkout:
+    handler: endpoints/checkout.handler
+    events:
+      - http: POST /checkout
 
 plugins:
   - serverless-offline
