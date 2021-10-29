@@ -15,6 +15,10 @@ functions:
     handler: endpoints/checkout.handler
     events:
       - http: POST /checkout
+  stripeWebhooks:
+    handler: endpoints/stripeWebhooks.handler
+    events:
+      - http: POST /webhook
 
 plugins:
   - serverless-offline
