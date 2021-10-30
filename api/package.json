@@ -1,8 +1,15 @@
 {
+  "dependencies": {
+    "aws-sdk": "^2.1018.0",
+    "serverless-dynamodb-client": "^0.0.2",
+    "stripe": "^8.184.0"
+  },
   "devDependencies": {
+    "serverless-dynamodb-local": "^0.2.40",
     "serverless-offline": "^8.2.0"
   },
-  "dependencies": {
-    "stripe": "^8.184.0"
+  "scripts": {
+    "start": "sls offline start --host 127.0.0.1",
+    "view-table": "dynamodb-admin"
   }
 }

@@ -18,17 +18,6 @@ After successful deployment, you can call the created application via HTTP:
 curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
 ```
 
-Which should result in response similar to the following (removed `input` content for brevity):
-
-```json
-{
-  "message": "Go Serverless v2.0! Your function executed successfully!",
-  "input": {
-    ...
-  }
-}
-```
-
 ## Local development
 
 You can invoke your function locally by using the following command:
@@ -37,17 +26,25 @@ You can invoke your function locally by using the following command:
 $ serverless invoke local --function hello
 ```
 
-Which should result in response similar to the following:
-
-```
-{
-  "statusCode": 200,
-  "body": "{\n  \"message\": \"Go Serverless v2.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
-}
-```
-
 Alternatively, it is also possible to emulate API Gateway and Lambda locally by using `serverless-offline` plugin. In order to do that, execute the following command to start local emulation with:
 
 ```bash
-$ serverless offline
+$ npm start
+This runs: sls offline start --host 127.0.0.1
 ```
+
+Adding the host flag lets me make the API calls from a VS Code REST client.
+
+Running this command will also start a local DynamoDB instance. The serverless dynamodb client package allows us to use the same code to reference our local or deployed database.
+
+## Viewing Local DynamoDB Instance
+
+Run ```npm install -g dynamodb-admin```
+
+After running the ```sls offline``` step from above or just ```sls dynamodb start```, run:
+
+```bash
+$ dynamodb-admin
+```
+
+Then visited `http://localhost:8001` to view the tables
