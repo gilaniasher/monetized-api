@@ -41,6 +41,10 @@ functions:
     handler: endpoints/stripeWebhooks.handler
     events:
       - http: POST /webhook
+  showApiKey:
+    handler: endpoints/showApiKey.handler
+    events:
+      - http: GET /showApiKey
 
 resources:
   Resources:

@@ -1,8 +1,12 @@
 import React from 'react'
 import './Home.css'
+import axios from 'axios'
+import { server } from '../../utils/API'
 
 const Home = () => {
-  const checkout = () => {
+  const checkout = async () => {
+    const res = await axios.post(`${server}/checkout`)
+    window.location.href = res.data.url
   }
 
   return <div className='container'>

@@ -1,4 +1,4 @@
-const stripe_secret = require('../secrets.json').stripe_secret
+const { stripe_secret } = require('../secrets.json')
 const stripe = require('stripe')(stripe_secret)
 
 /**
@@ -10,8 +10,8 @@ module.exports.handler = async event => {
     mode: 'subscription',
     payment_method_types: ['card'],
     line_items: [{ price: 'price_1JpxnYCQo6B1S35hIiXR1bTM' }],
-    success_url: 'http://gilaniasher.github.io/monetized-api/',
-    cancel_url: 'http://gilaniasher.github.io/monetized-api/'
+    success_url: 'http://localhost:3003/monetized-api/success?session_id={CHECKOUT_SESSION_ID}',
+    cancel_url: 'http://localhost:3003/monetized-api/error'
   })
 
   return {
