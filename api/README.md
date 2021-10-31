@@ -18,7 +18,7 @@ After successful deployment, you can call the created application via HTTP:
 curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
 ```
 
-## Local development
+## Local Server
 
 You can invoke your function locally by using the following command:
 
@@ -48,3 +48,15 @@ $ dynamodb-admin
 ```
 
 Then visited `http://localhost:8001` to view the tables
+
+## Local Stripe Testing
+
+Stripe uses a webhook to tell our backend when a customer has signed up for the API after the /checkout endpoint is called. To test this locally, install the [Stripe CLI](https://stripe.com/docs/stripe-cli).
+
+Then run:
+```bash
+$ stripe login
+$ stripe listen --forward-to localhost:3000/webhook
+```
+
+Now when a user checksout from the Stripe UI, they will call the webhook endpoint of our backend which adds the user to the db and gives them an API key.

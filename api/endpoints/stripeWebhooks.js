@@ -1,26 +1,11 @@
-const {stripe_secret, stripe_webhook} = require('../secrets.json')
+const { stripe_secret } = require('../secrets.json')
 const stripe = require('stripe')(stripe_secret)
+const database = require('serverless-dynamodb-client').doc
 
 /**
  * Allows our backend to respond to Stripe events
  */
 module.exports.handler = async event => {
-  /*
-  try {
-    var stripeEvent = stripe.webhooks.constructEvent(
-      JSON.stringify(event.body),
-      event.headers['stripe-signature'],
-      stripe_webhook
-    )
-  } catch (err) {
-    console.log('Webhook signature verification failed')
-    return { statusCode: 400 }
-  }
-
-  const data = stripeEvent.data
-  const eventType = stripeEvent.type
-  */
-
   const {data, type} = JSON.parse(event.body)
 
   switch (type) {
@@ -38,7 +23,10 @@ module.exports.handler = async event => {
       const apiKey = '123456789'
 
       // Store customer in db
-      // { customerId, apiKey, itemId }
+      await database.put({
+        TableName: 'usersTable-monetized-api',
+        Item: { customerId, apiKey, itemId }
+      }).promise()
 
       break
     case 'invoice.paid':

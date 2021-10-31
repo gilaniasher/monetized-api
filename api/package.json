@@ -10,6 +10,8 @@
   },
   "scripts": {
     "start": "sls offline start --host 127.0.0.1",
-    "view-table": "dynamodb-admin"
+    "view-table": "dynamodb-admin",
+    "stripe-login": "stripe login",
+    "forward-webhook": "stripe listen --forward-to localhost:3000/dev/webhook"
   }
 }
