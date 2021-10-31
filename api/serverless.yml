@@ -37,14 +37,22 @@ functions:
     handler: endpoints/checkout.handler
     events:
       - http: POST /checkout
-  stripeWebhooks:
-    handler: endpoints/stripeWebhooks.handler
+  webhook:
+    handler: endpoints/webhook.handler
     events:
       - http: POST /webhook
-  showApiKey:
-    handler: endpoints/showApiKey.handler
+  apiKey:
+    handler: endpoints/apiKey.handler
     events:
-      - http: GET /showApiKey
+      - http: GET /apiKey
+  monetized:
+    handler: endpoints/monetized.handler
+    events:
+      - http: GET /monetized
+  usage:
+    handler: endpoints/usage.handler
+    events:
+      - http: GET /usage
 
 resources:
   Resources:

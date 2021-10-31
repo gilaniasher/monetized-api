@@ -61,7 +61,7 @@ module.exports.handler = async event => {
       // Store customer in db
       await database.put({
         TableName: 'usersTable-monetized-api',
-        Item: { customerId, apiKey, itemId }
+        Item: { customerId, apiKey, itemId, calls: 0 }
       }).promise()
 
       break

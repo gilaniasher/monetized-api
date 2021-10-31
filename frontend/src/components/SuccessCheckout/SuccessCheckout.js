@@ -10,7 +10,7 @@ const SuccessCheckout = ({ location }) => {
   useEffect(() => {
     const session_id = new URLSearchParams(location.search).get('session_id')
 
-    axios.get(`${server}/showApiKey`, { params: { session_id } }).then(res => {
+    axios.get(`${server}/apiKey`, { params: { session_id } }).then(res => {
       setName(res.data.name)
       setApiKey(res.data.apiKey)
     })
