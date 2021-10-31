@@ -21,13 +21,17 @@ provider:
 
 functions:
   testGet:
-    handler: endpoints/testGet.handler
+    handler: endpoints/test/testGet.handler
     events:
       - http: GET /testGet
   testDynamo:
-    handler: endpoints/testDynamo.handler
+    handler: endpoints/test/testDynamo.handler
     events:
       - http: POST /testDynamo
+  testApiKey:
+    handler: endpoints/test/genApiKey.handler
+    events:
+      - http: POST /genApiKey
 
   checkout:
     handler: endpoints/checkout.handler
