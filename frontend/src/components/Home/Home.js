@@ -1,24 +1,22 @@
 import React from 'react'
-import logo from './logo.svg'
 import './Home.css'
 
 const Home = () => {
-  return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+  const checkout = () => {
+  }
+
+  return <div className='container'>
+    <div className='text-container'>
+      <h1>Monetized API</h1>
       <p>
-        Edit <code>src/App.js</code> and save to reload.
+        If you are interested in signing up for this API,
+        you will have to put a credit card on file through
+        Stripe's API. In return you will get an API Key that
+        you can use to start using this API.
       </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  )
+      <button className='get-started' onClick={checkout}>Get Started</button>
+    </div>
+  </div>
 }
 
 export default Home
