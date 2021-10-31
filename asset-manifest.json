@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/monetized-api/static/css/main.da24627d.chunk.css",
-    "main.js": "/monetized-api/static/js/main.b88041dd.chunk.js",
-    "main.js.map": "/monetized-api/static/js/main.b88041dd.chunk.js.map",
+    "main.js": "/monetized-api/static/js/main.6651ab79.chunk.js",
+    "main.js.map": "/monetized-api/static/js/main.6651ab79.chunk.js.map",
     "runtime-main.js": "/monetized-api/static/js/runtime-main.0ee3613a.js",
     "runtime-main.js.map": "/monetized-api/static/js/runtime-main.0ee3613a.js.map",
     "static/js/2.f47dd44a.chunk.js": "/monetized-api/static/js/2.f47dd44a.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.0ee3613a.js",
     "static/js/2.f47dd44a.chunk.js",
     "static/css/main.da24627d.chunk.css",
-    "static/js/main.b88041dd.chunk.js"
+    "static/js/main.6651ab79.chunk.js"
   ]
 }
