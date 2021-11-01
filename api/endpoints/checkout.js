@@ -1,3 +1,4 @@
+const { package } = require('../utils')
 const { stripe_secret } = require('../secrets.json')
 const stripe = require('stripe')(stripe_secret)
 
@@ -14,8 +15,5 @@ module.exports.handler = async event => {
     cancel_url: 'https://gilaniasher.github.io/monetized-api/monetized-api/error'
   })
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify(session)
-  }
+  return package(200, JSON.stringify(session))
 }

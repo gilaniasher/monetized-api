@@ -23,36 +23,60 @@ functions:
   testGet:
     handler: endpoints/test/testGet.handler
     events:
-      - http: GET /testGet
+      - http:
+          path: /testGet
+          method: GET
+          cors: true
   testDynamo:
     handler: endpoints/test/testDynamo.handler
     events:
-      - http: POST /testDynamo
+      - http:
+          path: /testDynamo
+          method: POST
+          cors: true
   testApiKey:
     handler: endpoints/test/genApiKey.handler
     events:
-      - http: POST /genApiKey
+      - http:
+          path: /genApiKey
+          method: GET
+          cors: true
 
   checkout:
     handler: endpoints/checkout.handler
     events:
-      - http: POST /checkout
+      - http:
+          path: /checkout
+          method: POST
+          cors: true
   webhook:
     handler: endpoints/webhook.handler
     events:
-      - http: POST /webhook
+      - http:
+          path: /webhook
+          method: POST
+          cors: true
   apiKey:
     handler: endpoints/apiKey.handler
     events:
-      - http: GET /apiKey
+      - http:
+          path: /apiKey
+          method: GET
+          cors: true
   monetized:
     handler: endpoints/monetized.handler
     events:
-      - http: GET /monetized
+      - http:
+          path: /monetized
+          method: GET
+          cors: true
   usage:
     handler: endpoints/usage.handler
     events:
-      - http: GET /usage
+      - http:
+          path: /usage
+          method: GET
+          cors: true
 
 resources:
   Resources:

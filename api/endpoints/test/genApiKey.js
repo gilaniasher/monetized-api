@@ -1,3 +1,4 @@
+const { package } = require('../../utils')
 const database = require('serverless-dynamodb-client').doc
 const { randomBytes } = require('crypto')
 
@@ -16,5 +17,5 @@ module.exports.handler = async event => {
 
   } while (result.Count !== 0)
 
-  return { statusCode: 200, body: JSON.stringify({ apiKey }) }
+  return package(200, apiKey)
 }

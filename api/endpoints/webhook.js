@@ -1,3 +1,4 @@
+const { package } = require('../utils')
 const { stripe_secret, webhook_secret } = require('../secrets.json')
 const stripe = require('stripe')(stripe_secret)
 const database = require('serverless-dynamodb-client').doc
@@ -41,7 +42,7 @@ const genApiKey = async () => {
 module.exports.handler = async event => {
   // Check if call is valid by verifying webhook signature
   const [result, success] = webhookSigning(event)
-  if (!success) return { statusCode: 401, body: JSON.stringify(result) }
+  if (!success) return package(401, JSON.stringify(result))
   const { data, type } = result
 
   switch (type) {
@@ -71,5 +72,5 @@ module.exports.handler = async event => {
       break
   }
 
-  return { statusCode: 200, body: '' }
+  return package(200, 'Responded to webhook successfully')
 }

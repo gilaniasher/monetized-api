@@ -1,3 +1,4 @@
+const { package } = require('../../utils')
 const database = require('serverless-dynamodb-client').doc
 
 module.exports.handler = async event => {
@@ -6,5 +7,5 @@ module.exports.handler = async event => {
     Item: { customerId: 'cust-id-125', apiKey: 'api-key-125', itemId: 'item-id-125' }
   }).promise()
   
-  return { statusCode: 200, body: 'Added new item' }
+  return package(200, 'Added new item')
 }

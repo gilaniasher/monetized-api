@@ -1,3 +1,4 @@
+const { package } = require('../utils')
 const { stripe_secret } = require('../secrets.json')
 const stripe = require('stripe')(stripe_secret)
 const database = require('serverless-dynamodb-client').doc
@@ -7,7 +8,7 @@ module.exports.handler = async event => {
   const apiKey = event.headers['x-api-key']
 
   if (!apiKey)
-    return { statusCode: 401 }
+    return package(401, 'API key not provided in x-api-key header')
 
   const result = await database.query({
     TableName: 'usersTable-monetized-api',
@@ -17,7 +18,7 @@ module.exports.handler = async event => {
   }).promise()
 
   if (result.Count === 0)
-    return { statusCode: 404 }
+    return package(404, 'API key not found in database')
 
   // Update API call count for user
   const { customerId, itemId } = result.Items[0]
@@ -33,5 +34,5 @@ module.exports.handler = async event => {
   await stripe.subscriptionItems.createUsageRecord(itemId, { quantity: 1, timestamp: 'now', action: 'increment' })
 
   // Actual API work would happen here
-  return { statusCode: 200, body: 'Here is your monetized API Data!' }
+  return package(200, 'Here is your monetized API Data!')
 }

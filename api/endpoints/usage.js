@@ -1,3 +1,4 @@
+const { package } = require('../utils')
 const { stripe_secret } = require('../secrets.json')
 const stripe = require('stripe')(stripe_secret)
 const database = require('serverless-dynamodb-client').doc
@@ -7,7 +8,7 @@ module.exports.handler = async event => {
 
   if (!customerId) {
     const apiKey = event.queryStringParameters.apiKey
-    if (!apiKey) return { statusCode: 400, body: 'customerId or apiKey query string parameter is required' }
+    if (!apiKey) return package(400, 'customerId or apiKey query string parameter is required')
     
     const res = await database.query({
       TableName: 'usersTable-monetized-api',
@@ -17,11 +18,11 @@ module.exports.handler = async event => {
     }).promise()
 
     if (res.Count === 0)
-      return { statusCode: 404, body: 'Customer not found' }
+      return package(404, 'Customer not found')
     else
       customerId = res.Items[0].customerId
   }
 
   const invoice = await stripe.invoices.retrieveUpcoming({ customer: customerId })
-  return { statusCode: 200, body: JSON.stringify(invoice) }
+  return package(200, JSON.stringify(invoice))
 }

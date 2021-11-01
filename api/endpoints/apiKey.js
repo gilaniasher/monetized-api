@@ -1,3 +1,4 @@
+const { package } = require('../utils')
 const { stripe_secret } = require('../secrets.json')
 const stripe = require('stripe')(stripe_secret)
 const database = require('serverless-dynamodb-client').doc
@@ -15,7 +16,7 @@ module.exports.handler = async event => {
   const data = await database.get({ TableName: 'usersTable-monetized-api', Key: { customerId } }).promise()
 
   if (!data.Item)
-    return { statusCode: 404 }
+    return package(404, 'User not found')
   else
-    return { statusCode: 200, body: JSON.stringify({ name, apiKey: data.Item.apiKey }) }
+    return package(200, JSON.stringify({ name, apiKey: data.Item.apiKey }))
 }
