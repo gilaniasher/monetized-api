@@ -11,8 +11,8 @@ module.exports.handler = async event => {
     mode: 'subscription',
     payment_method_types: ['card'],
     line_items: [{ price: 'price_1JpxnYCQo6B1S35hIiXR1bTM' }],
-    success_url: 'https://gilaniasher.github.io/monetized-api/monetized-api/success?session_id={CHECKOUT_SESSION_ID}',
-    cancel_url: 'https://gilaniasher.github.io/monetized-api/monetized-api/error'
+    success_url: 'https://gilaniasher.github.io/monetized-api/success?session_id={CHECKOUT_SESSION_ID}',
+    cancel_url: 'https://gilaniasher.github.io/monetized-api/error'
   })
 
   return package(200, JSON.stringify(session))
