@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/monetized-api/static/css/main.bada9b69.chunk.css",
-    "main.js": "/monetized-api/static/js/main.04bb10b2.chunk.js",
-    "main.js.map": "/monetized-api/static/js/main.04bb10b2.chunk.js.map",
+    "main.css": "/monetized-api/static/css/main.210857a3.chunk.css",
+    "main.js": "/monetized-api/static/js/main.c1763d37.chunk.js",
+    "main.js.map": "/monetized-api/static/js/main.c1763d37.chunk.js.map",
     "runtime-main.js": "/monetized-api/static/js/runtime-main.d299f41a.js",
     "runtime-main.js.map": "/monetized-api/static/js/runtime-main.d299f41a.js.map",
     "static/js/2.0454ccef.chunk.js": "/monetized-api/static/js/2.0454ccef.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.f8b113a2.chunk.js": "/monetized-api/static/js/3.f8b113a2.chunk.js",
     "static/js/3.f8b113a2.chunk.js.map": "/monetized-api/static/js/3.f8b113a2.chunk.js.map",
     "index.html": "/monetized-api/index.html",
-    "static/css/main.bada9b69.chunk.css.map": "/monetized-api/static/css/main.bada9b69.chunk.css.map",
+    "static/css/main.210857a3.chunk.css.map": "/monetized-api/static/css/main.210857a3.chunk.css.map",
     "static/js/2.0454ccef.chunk.js.LICENSE.txt": "/monetized-api/static/js/2.0454ccef.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d299f41a.js",
     "static/js/2.0454ccef.chunk.js",
-    "static/css/main.bada9b69.chunk.css",
-    "static/js/main.04bb10b2.chunk.js"
+    "static/css/main.210857a3.chunk.css",
+    "static/js/main.c1763d37.chunk.js"
   ]
 }
