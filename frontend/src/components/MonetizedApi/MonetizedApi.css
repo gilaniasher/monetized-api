@@ -1,7 +1,6 @@
-.container {
+.api-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100vw;
   height: 100vh;
   align-items: center;
@@ -9,14 +8,10 @@
   color: white;
 }
 
-.home-text-container {
-  text-align: center;
-  width: 60%;
-}
-
 button {
-  margin-top: 5%;
+  margin-top: 2%;
   margin-bottom: 5%;
+  margin-right: 2%;
   padding: 15px 32px;
   border-radius: 100px;
   border: none;
@@ -29,4 +24,19 @@ button {
 
 button:hover {
   background-color: #75B8C8;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+input {
+  margin-top: 1%;
+  margin-bottom: 2%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 12px 20px 12px 20px;
 }

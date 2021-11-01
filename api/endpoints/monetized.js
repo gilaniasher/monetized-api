@@ -33,5 +33,5 @@ module.exports.handler = async event => {
   await stripe.subscriptionItems.createUsageRecord(itemId, { quantity: 1, timestamp: 'now', action: 'increment' })
 
   // Actual API work would happen here
-  return { statusCode: 200, body: 'Monetized API Data!' }
+  return { statusCode: 200, body: 'Here is your monetized API Data!' }
 }

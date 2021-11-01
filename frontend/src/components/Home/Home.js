@@ -3,14 +3,18 @@ import './Home.css'
 import axios from 'axios'
 import { server } from '../../utils/API'
 
-const Home = () => {
+const Home = ({ history }) => {
   const checkout = async () => {
     const res = await axios.post(`${server}/checkout`)
     window.location.href = res.data.url
   }
 
+  const goToApi = () => {
+    history.push('/use-api')
+  }
+
   return <div className='container'>
-    <div className='text-container'>
+    <div className='home-text-container'>
       <h1>Monetized API</h1>
       <p>
         If you are interested in signing up for this API,
@@ -19,6 +23,9 @@ const Home = () => {
         you can use to start using this API.
       </p>
       <button className='get-started' onClick={checkout}>Get Started</button>
+
+      <h1>Already a Subscriber?</h1>
+      <button className='get-started' onClick={goToApi}>Click Here to use the API</button>
     </div>
   </div>
 }
