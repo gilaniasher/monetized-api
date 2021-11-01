@@ -17,7 +17,9 @@ provider:
             - dynamodb:PutItem
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
-          Resource: !GetAtt usersTable.Arn
+          Resource:
+            - !GetAtt usersTable.Arn
+            - !Sub '${usersTable.Arn}/index/*'
 
 functions:
   testGet:
