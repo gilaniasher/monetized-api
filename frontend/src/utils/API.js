@@ -1,1 +1,1 @@
-export const server = 'http://localhost:3000/dev'
+export const server = 'https://nyf7qy1xfj.execute-api.us-east-1.amazonaws.com/dev'

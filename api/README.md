@@ -47,7 +47,7 @@ After running the ```sls offline``` step from above or just ```sls dynamodb star
 $ dynamodb-admin
 ```
 
-Then visited `http://localhost:8001` to view the tables
+Then visit `http://localhost:8001` to view the tables
 
 ## Local Stripe Testing
 
