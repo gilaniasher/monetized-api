@@ -1,15 +1,32 @@
-.container {
+.success-container {
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
   align-items: center;
+  justify-content: center;
   background-color: #282c34;
   color: white;
 }
 
-.text-container {
-  margin-top: 20%;
+.success-text-container {
   text-align: center;
   width: 60%;
+}
+
+button {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 15px 32px;
+  border-radius: 100px;
+  border: none;
+  background-color: #9CFFFA;
+  font-family: 'Barlow', 'sans-serif';
+  font-size: 20px;
+  font-weight: bold;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #75B8C8;
 }

@@ -8,10 +8,11 @@
   color: white;
 }
 
-button {
+.api-button {
   margin-top: 2%;
   margin-bottom: 5%;
-  margin-right: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
   padding: 15px 32px;
   border-radius: 100px;
   border: none;
@@ -22,7 +23,7 @@ button {
   transition-duration: 0.4s;
 }
 
-button:hover {
+.api-button:hover {
   background-color: #75B8C8;
 }
 

@@ -13,7 +13,7 @@ const Home = ({ history }) => {
     history.push('/use-api')
   }
 
-  return <div className='container'>
+  return <div className='home-container'>
     <div className='home-text-container'>
       <h1>Monetized API</h1>
       <p>
@@ -22,10 +22,10 @@ const Home = ({ history }) => {
         Stripe's API. In return you will get an API Key that
         you can use to start using this API.
       </p>
-      <button className='get-started' onClick={checkout}>Get Started</button>
+      <button onClick={checkout}>Get Started</button>
 
       <h1>Already a Subscriber?</h1>
-      <button className='get-started' onClick={goToApi}>Click Here to use the API</button>
+      <button onClick={goToApi}>Click Here to use the API</button>
     </div>
   </div>
 }

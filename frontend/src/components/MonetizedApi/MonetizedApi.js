@@ -27,8 +27,8 @@ const MonetizedApi = () => {
     <input placeholder='Enter Your API Key' onChange={e => setApiKey(e.target.value)} />
 
     <div className='btn-container'>
-      <button onClick={callApi}>Submit API Call</button>
-      <button onClick={getUsage}>Get Usage Report</button>
+      <button class='api-button' onClick={callApi}>Submit API Call</button>
+      <button class='api-button' onClick={getUsage}>Get Usage Report</button>
     </div>
 
     {JSON.stringify(result)}

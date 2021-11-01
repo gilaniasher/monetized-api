@@ -1,15 +1,15 @@
-.container {
+.error-container {
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
   align-items: center;
+  justify-content: center;
   background-color: #282c34;
   color: white;
 }
 
-.text-container {
-  margin-top: 20%;
+.error-text-container {
   text-align: center;
   width: 60%;
 }
