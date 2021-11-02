@@ -1,8 +1,7 @@
 {
   "dependencies": {
-    "aws-sdk": "^2.1018.0",
-    "serverless-dynamodb-client": "^0.0.2",
-    "stripe": "^8.184.0"
+    "aws-sdk": "^2.1019.0",
+    "stripe": "^8.186.0"
   },
   "devDependencies": {
     "serverless-dynamodb-local": "^0.2.40",

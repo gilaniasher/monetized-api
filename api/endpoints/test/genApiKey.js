@@ -1,5 +1,4 @@
-const { package } = require('../../utils')
-const database = require('serverless-dynamodb-client').doc
+const { package, database } = require('../../utils')
 const { randomBytes } = require('crypto')
 
 module.exports.handler = async event => {

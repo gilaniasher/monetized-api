@@ -1,7 +1,6 @@
-const { package } = require('../utils')
+const { package, database } = require('../utils')
 const { stripe_secret, webhook_secret } = require('../secrets.json')
 const stripe = require('stripe')(stripe_secret)
-const database = require('serverless-dynamodb-client').doc
 const { randomBytes } = require('crypto')
 
 const webhookSigning = event => {

@@ -1,7 +1,6 @@
-const { package } = require('../utils')
+const { package, database } = require('../utils')
 const { stripe_secret } = require('../secrets.json')
 const stripe = require('stripe')(stripe_secret)
-const database = require('serverless-dynamodb-client').doc
 
 module.exports.handler = async event => {
   // Use the session id to look up customer through Stripe API

@@ -8,3 +8,6 @@ module.exports.package = (statusCode, body) => {
     body
   }
 }
+
+const AWS = require('aws-sdk')
+module.exports.database = new AWS.DynamoDB.DocumentClient()
