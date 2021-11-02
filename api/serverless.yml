@@ -21,6 +21,14 @@ provider:
             - !GetAtt usersTable.Arn
             - !Sub '${usersTable.Arn}/index/*'
 
+package:
+  exclude:
+    - .dynamodb/**
+    - .gitignore
+    - package.json
+    - package-lock.json
+    - README.md
+
 functions:
   testGet:
     handler: endpoints/test/testGet.handler
