@@ -1,1 +1,1 @@
-export const server = 'https://nyf7qy1xfj.execute-api.us-east-1.amazonaws.com/dev'
+export const server = 'https://mmu2p50hu5.execute-api.us-east-1.amazonaws.com/dev'

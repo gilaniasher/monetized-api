@@ -1,15 +1,18 @@
 {
   "dependencies": {
-    "aws-sdk": "^2.1019.0",
     "stripe": "^8.186.0"
   },
   "devDependencies": {
+    "aws-sdk": "^2.1019.0",
+    "dynamodb-admin": "^4.4.0",
+    "serverless": "^3.22.0",
     "serverless-dynamodb-local": "^0.2.40",
     "serverless-offline": "^8.2.0"
   },
   "scripts": {
-    "start": "sls offline start --host 127.0.0.1",
-    "view-table": "dynamodb-admin",
+    "start": "npx sls offline start --host 127.0.0.1",
+    "deploy": "npx sls deploy",
+    "view-table": "npx dynamodb-admin",
     "stripe-login": "stripe login",
     "forward-webhook": "stripe listen --forward-to localhost:3000/dev/webhook"
   }
